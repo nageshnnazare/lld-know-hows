@@ -2,7 +2,7 @@
 
 ## 🎯 Course Overview
 
-This comprehensive course is designed for experienced C/C++ developers (7+ years) preparing for system design interviews. It covers Low-Level Design (LLD) from fundamentals to advanced concepts with **30 real-world problems**.
+This comprehensive course is designed for experienced C/C++ developers preparing for system design interviews. It covers Low-Level Design (LLD) from fundamentals to advanced concepts with **30 real-world problems**.
 
 ## 📚 Course Structure
 
@@ -37,7 +37,7 @@ lld/
    - Adapter, Decorator, Facade, Composite, Proxy, Bridge, Flyweight
 6. **Behavioral Patterns** (`02-design-patterns/03-behavioral-patterns.md`)
    - Strategy, Observer, Command, State, Template Method, Iterator, Chain of Responsibility
-   
+
 *Each pattern includes: Intent, When to Use, Structure, C++ Implementation, Real-world Examples*
 
 ### Phase 3: Easy Problems (Week 5-6)
