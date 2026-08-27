@@ -10,11 +10,16 @@
 
 ## Four Pillars of OOP
 
+![The four pillars of OOP](../figures/oop-pillars.svg)
+
 ### 1. Encapsulation
 **Definition**: Bundling data and methods that operate on that data within a single unit (class), hiding internal details.
 
-```
-┌─────────────────────────────┐
+![Encapsulation bundles data with the methods that guard it](../figures/encapsulation.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌─────────────────────────────┐
 │      BankAccount            │
 ├─────────────────────────────┤
 │ - accountNumber: string     │ ← Private (Hidden)
@@ -23,8 +28,8 @@
 │ + deposit(amount): void     │ ← Public (Interface)
 │ + withdraw(amount): bool    │ ← Public (Interface)
 │ + getBalance(): double      │ ← Public (Interface)
-└─────────────────────────────┘
-```
+└─────────────────────────────┘</code></pre>
+</details>
 
 **Key Benefits**:
 - Data hiding and protection
@@ -35,8 +40,11 @@
 ### 2. Inheritance
 **Definition**: Mechanism where a new class inherits properties and behaviors from an existing class.
 
-```
-              ┌──────────────┐
+![Inheritance: subclasses are-a base class](../figures/inheritance.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>              ┌──────────────┐
               │   Vehicle    │
               ├──────────────┤
               │ + start()    │
@@ -49,8 +57,8 @@
     │   Car    │          │   Bike   │
     ├──────────┤          ├──────────┤
     │ + drive()│          │ + pedal()│
-    └──────────┘          └──────────┘
-```
+    └──────────┘          └──────────┘</code></pre>
+</details>
 
 **Types**:
 - **Single**: Class inherits from one base class
@@ -72,8 +80,11 @@ b) **Runtime (Dynamic) Polymorphism**
    - Virtual Functions
    - Function Overriding
 
-```
-┌─────────────────────┐
+![Polymorphism: one call resolves to many implementations](../figures/polymorphism.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌─────────────────────┐
 │      Shape          │
 ├─────────────────────┤
 │ + draw(): void = 0  │ ← Pure virtual (interface)
@@ -89,14 +100,17 @@ b) **Runtime (Dynamic) Polymorphism**
 
 Usage:
 Shape* shape = new Circle();
-shape->draw();  // Calls Circle's draw() - Runtime polymorphism
-```
+shape-&gt;draw();  // Calls Circle's draw() - Runtime polymorphism</code></pre>
+</details>
 
 ### 4. Abstraction
 **Definition**: Hiding complex implementation details and showing only essential features.
 
-```
-┌────────────────────────┐
+![Abstraction: depend on what a type does, not how](../figures/abstraction.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌────────────────────────┐
 │   PaymentProcessor     │ ← Abstract Interface
 ├────────────────────────┤
 │ + processPayment()     │
@@ -108,22 +122,27 @@ shape->draw();  // Calls Circle's draw() - Runtime polymorphism
 ┌─────────┐     ┌─────────┐   ┌─────────┐
 │ Credit  │     │  PayPal │   │ Bitcoin │
 │  Card   │     │         │   │         │
-└─────────┘     └─────────┘   └─────────┘
-```
+└─────────┘     └─────────┘   └─────────┘</code></pre>
+</details>
 
 ---
 
 ## Class Relationships
 
+![The six UML class relationships](../figures/relationships.svg)
+
 ### 1. Association
 **Definition**: "Uses-a" relationship. One class uses another class.
 
-```
-┌──────────┐           ┌──────────┐
-│ Teacher  │ ────────> │ Student  │
+![Association: one class uses another](../figures/rel-association.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────────┐           ┌──────────┐
+│ Teacher  │ ────────&gt; │ Student  │
 │          │  teaches  │          │
-└──────────┘           └──────────┘
-```
+└──────────┘           └──────────┘</code></pre>
+</details>
 
 **Characteristics**:
 - Loose coupling
@@ -133,12 +152,15 @@ shape->draw();  // Calls Circle's draw() - Runtime polymorphism
 ### 2. Aggregation
 **Definition**: "Has-a" relationship (weak). Whole-part relationship where parts can exist independently.
 
-```
-┌────────────┐           ┌──────────┐
-│ Department │ ◇────────>│ Employee │
+![Aggregation: weak has-a](../figures/rel-aggregation.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌────────────┐           ┌──────────┐
+│ Department │ ◇────────&gt;│ Employee │
 │            │  has      │          │
-└────────────┘           └──────────┘
-```
+└────────────┘           └──────────┘</code></pre>
+</details>
 
 **Characteristics**:
 - Part can exist without whole
@@ -150,12 +172,15 @@ shape->draw();  // Calls Circle's draw() - Runtime polymorphism
 ### 3. Composition
 **Definition**: "Has-a" relationship (strong). Whole-part relationship where parts cannot exist without whole.
 
-```
-┌──────┐           ┌──────┐
-│ Car  │ ◆────────>│Engine│
+![Composition: strong has-a](../figures/rel-composition.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────┐           ┌──────┐
+│ Car  │ ◆────────&gt;│Engine│
 │      │  has      │      │
-└──────┘           └──────┘
-```
+└──────┘           └──────┘</code></pre>
+</details>
 
 **Characteristics**:
 - Part cannot exist without whole
@@ -166,26 +191,32 @@ shape->draw();  // Calls Circle's draw() - Runtime polymorphism
 **Example**: Car has Engine. If Car is destroyed, Engine is destroyed.
 
 ### 4. Inheritance (IS-A)
-```
-┌──────────┐
+![Inheritance is-a](../figures/inheritance.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────────┐
 │  Animal  │
 └────▲─────┘
      │ (is-a)
      │
 ┌────┴─────┐
 │   Dog    │
-└──────────┘
-```
+└──────────┘</code></pre>
+</details>
 
 ### 5. Dependency
 **Definition**: Weakest relationship. One class depends on another temporarily.
 
-```
-┌──────────┐           ┌──────────┐
-│  Client  │ - - - - ->│  Server  │
+![Dependency: transient use](../figures/rel-dependency.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────────┐           ┌──────────┐
+│  Client  │ - - - - -&gt;│  Server  │
 │          │   uses    │          │
-└──────────┘           └──────────┘
-```
+└──────────┘           └──────────┘</code></pre>
+</details>
 
 **Example**: Method parameter, local variable, or return type.
 
@@ -195,8 +226,11 @@ shape->draw();  // Calls Circle's draw() - Runtime polymorphism
 
 ### Abstract Class vs Concrete Class
 
-```
-┌───────────────────────────┐
+![Abstract vs concrete classes](../figures/abstract-vs-concrete.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌───────────────────────────┐
 │   AbstractAnimal          │ ← Cannot instantiate
 ├───────────────────────────┤
 │ # name: string            │
@@ -210,8 +244,8 @@ shape->draw();  // Calls Circle's draw() - Runtime polymorphism
 ├───────────────────────────┤
 │ + eat(): void {...}       │ ← Must implement
 │ + bark(): void {...}      │ ← Additional method
-└───────────────────────────┘
-```
+└───────────────────────────┘</code></pre>
+</details>
 
 **When to use Abstract Class**:
 - Share code among related classes
@@ -225,8 +259,11 @@ shape->draw();  // Calls Circle's draw() - Runtime polymorphism
 
 ### Interface (Pure Abstract Class in C++)
 
-```
-┌───────────────────────────┐
+![Interface vs abstract class](../figures/interface-vs-abstract.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌───────────────────────────┐
 │   IFlyable                │ ← Interface
 ├───────────────────────────┤
 │ + fly(): void = 0         │ ← All methods pure virtual
@@ -237,8 +274,8 @@ shape->draw();  // Calls Circle's draw() - Runtime polymorphism
        ▼             ▼
 ┌──────────┐   ┌──────────┐
 │   Bird   │   │ Airplane │
-└──────────┘   └──────────┘
-```
+└──────────┘   └──────────┘</code></pre>
+</details>
 
 ### Comparison Table
 

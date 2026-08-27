@@ -25,8 +25,11 @@ Behavioral patterns are concerned with algorithms and the assignment of responsi
 
 ### Structure
 
-```
-┌─────────────┐
+![Strategy pattern](../figures/strategy.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌─────────────┐
 │   Context   │
 ├─────────────┤
 │ - strategy  │───────┐
@@ -44,8 +47,8 @@ Behavioral patterns are concerned with algorithms and the assignment of responsi
    │ConcreteStratA│  │ConcreteStratB│ │ConcreteStratC│
    ├──────────────┤  ├──────────────┤ ├──────────────┤
    │+ algorithm() │  │+ algorithm() │ │+ algorithm() │
-   └──────────────┘  └──────────────┘ └──────────────┘
-```
+   └──────────────┘  └──────────────┘ └──────────────┘</code></pre>
+</details>
 
 ### C++ Implementation
 
@@ -162,8 +165,11 @@ cart.checkout();
 
 ### Structure
 
-```
-┌──────────────┐         ┌──────────────┐
+![Observer pattern](../figures/observer.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────────────┐         ┌──────────────┐
 │   Subject    │◄────────│   Observer   │
 ├──────────────┤         │ (interface)  │
 │- observers   │         ├──────────────┤
@@ -178,8 +184,8 @@ cart.checkout();
 │- state      │    │ + update()  │ │ + update() │
 │+ getState() │    └─────────────┘ └────────────┘
 │+ setState() │
-└─────────────┘
-```
+└─────────────┘</code></pre>
+</details>
 
 ### C++ Implementation
 
@@ -303,9 +309,12 @@ agency.setNews("Update: Stock market reaches new high");
 
 ### Structure
 
-```
-┌──────────────┐       ┌──────────────┐
-│   Client     │──────>│   Invoker    │
+![Command pattern](../figures/command.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────────────┐       ┌──────────────┐
+│   Client     │──────&gt;│   Invoker    │
 └──────────────┘       ├──────────────┤
                        │- command     │
                        │+ execute()   │
@@ -333,8 +342,8 @@ agency.setNews("Update: Stock market reaches new high");
                   │   Receiver   │
                   ├──────────────┤
                   │+ action()    │
-                  └──────────────┘
-```
+                  └──────────────┘</code></pre>
+</details>
 
 ### C++ Implementation
 
@@ -488,9 +497,12 @@ remote.undo();  // Turns light off
 
 ### Structure
 
-```
-┌──────────────┐         ┌──────────────┐
-│   Context    │────────>│    State     │ (interface)
+![State pattern](../figures/state.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────────────┐         ┌──────────────┐
+│   Context    │────────&gt;│    State     │ (interface)
 ├──────────────┤         ├──────────────┤
 │- state       │         │ + handle()   │
 │+ request()   │         └──────△───────┘
@@ -501,8 +513,8 @@ remote.undo();  // Turns light off
                  │     A     │  │     B     │  │     C     │
                  ├───────────┤  ├───────────┤  ├───────────┤
                  │+ handle() │  │+ handle() │  │+ handle() │
-                 └───────────┘  └───────────┘  └───────────┘
-```
+                 └───────────┘  └───────────┘  └───────────┘</code></pre>
+</details>
 
 ### C++ Implementation
 
@@ -640,8 +652,11 @@ connection.close();         // Already closed
 
 ### Structure
 
-```
-┌──────────────────┐
+![Template Method](../figures/template-method.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────────────────┐
 │ AbstractClass    │
 ├──────────────────┤
 │+templateMethod() │────┐
@@ -657,8 +672,8 @@ connection.close();         // Already closed
 ├────────────┤ ├──────────────┤
 │+ primitiveOp1()│ │+ primitiveOp1()│
 │+ primitiveOp2()│ │+ primitiveOp2()│
-└────────────┘ └──────────────┘
-```
+└────────────┘ └──────────────┘</code></pre>
+</details>
 
 ### C++ Implementation
 
@@ -775,9 +790,12 @@ xmlProcessor.process();
 
 ### Structure
 
-```
-┌──────────────┐         ┌──────────────┐
-│  Aggregate   │────────>│   Iterator   │
+![Iterator pattern](../figures/iterator.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────────────┐         ┌──────────────┐
+│  Aggregate   │────────&gt;│   Iterator   │
 │ (interface)  │         │ (interface)  │
 ├──────────────┤         ├──────────────┤
 │+createIter() │         │ + next()     │
@@ -787,12 +805,12 @@ xmlProcessor.process();
 ┌──────▼────────┐                 │
 │ConcreteAggreg │          ┌──────▼──────┐
 ├───────────────┤          │ConcreteIter │
-│+ createIter() │─creates─>├─────────────┤
+│+ createIter() │─creates─&gt;├─────────────┤
 └───────────────┘          │+ next()     │
                            │+ hasNext()  │
                            │+ current()  │
-                           └─────────────┘
-```
+                           └─────────────┘</code></pre>
+</details>
 
 ### C++ Implementation
 
@@ -903,9 +921,12 @@ while (iterator->hasNext()) {
 
 ### Structure
 
-```
-┌──────────────┐       ┌───────────────────────┐
-│   Client     │──────>│   Handler (abstract)  │
+![Chain of Responsibility](../figures/chain-of-responsibility.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────────────┐       ┌───────────────────────┐
+│   Client     │──────&gt;│   Handler (abstract)  │
 └──────────────┘       ├───────────────────────┤
                        │- successor: Handler*  │
                        │+ handleRequest()      │
@@ -921,9 +942,9 @@ while (iterator->hasNext()) {
           └──────────────────┘  └──────────────┘  └──────────────┘
 
 Chain at runtime:
-  Client ──> HandlerA ──> HandlerB ──> HandlerC ──> null
-           (if can't handle, pass to next)
-```
+  Client ──&gt; HandlerA ──&gt; HandlerB ──&gt; HandlerC ──&gt; null
+           (if can't handle, pass to next)</code></pre>
+</details>
 
 ### C++ Implementation
 

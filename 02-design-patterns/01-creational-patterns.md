@@ -24,8 +24,11 @@ Creational patterns deal with object creation mechanisms, trying to create objec
 
 ### Structure
 
-```
-┌──────────────────────┐
+![Singleton pattern](../figures/singleton.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────────────────────┐
 │     Singleton        │
 ├──────────────────────┤
 │ - instance: Singleton│ ← Static
@@ -33,8 +36,8 @@ Creational patterns deal with object creation mechanisms, trying to create objec
 ├──────────────────────┤
 │ + getInstance(): *   │ ← Static method
 │ + operation()        │
-└──────────────────────┘
-```
+└──────────────────────┘</code></pre>
+</details>
 
 ### Implementation (Thread-Safe)
 
@@ -147,8 +150,11 @@ int main() {
 
 ### Structure
 
-```
-┌────────────────┐
+![Factory Method](../figures/factory-method.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌────────────────┐
 │    Creator     │
 ├────────────────┤
 │ + factoryMethod│ ← Returns Product
@@ -166,8 +172,8 @@ int main() {
     ▼         ▼             ▼
 ┌─────────┐ ┌─────────┐ ┌─────────┐
 │Product A│ │Product B│ │Product C│
-└─────────┘ └─────────┘ └─────────┘
-```
+└─────────┘ └─────────┘ └─────────┘</code></pre>
+</details>
 
 ### Implementation
 
@@ -301,8 +307,11 @@ int main() {
 
 ### Structure
 
-```
-┌─────────────────────┐
+![Abstract Factory](../figures/abstract-factory.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌─────────────────────┐
 │  AbstractFactory    │
 ├─────────────────────┤
 │ +createProductA()   │
@@ -318,8 +327,8 @@ int main() {
     │creates        │creates
     ▼               ▼
 ProductA1       ProductA2
-ProductB1       ProductB2
-```
+ProductB1       ProductB2</code></pre>
+</details>
 
 ### Implementation - GUI Components
 
@@ -486,9 +495,12 @@ int main() {
 
 ### Structure
 
-```
-┌──────────────┐      ┌──────────────┐
-│   Director   │─────>│   Builder    │
+![Builder pattern](../figures/builder.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────────────┐      ┌──────────────┐
+│   Director   │─────&gt;│   Builder    │
 └──────────────┘      └──────┬───────┘
                              │
                     ┌────────┴────────┐
@@ -502,8 +514,8 @@ int main() {
                     ▼                  ▼
             ┌──────────────┐  ┌──────────────┐
             │   Product A  │  │   Product B  │
-            └──────────────┘  └──────────────┘
-```
+            └──────────────┘  └──────────────┘</code></pre>
+</details>
 
 ### Implementation - Computer Builder
 
@@ -727,8 +739,11 @@ int main() {
 
 ### Structure
 
-```
-┌──────────────────┐
+![Prototype pattern](../figures/prototype.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────────────────┐
 │    Prototype     │
 ├──────────────────┤
 │ + clone(): *     │
@@ -738,8 +753,8 @@ int main() {
     ▼          ▼          ▼
 ┌─────────┐┌─────────┐┌─────────┐
 │Concrete1││Concrete2││Concrete3│
-└─────────┘└─────────┘└─────────┘
-```
+└─────────┘└─────────┘└─────────┘</code></pre>
+</details>
 
 ### Implementation
 

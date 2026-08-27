@@ -51,8 +51,11 @@ public:
 
 ### ✅ Good Example - Single Responsibility
 
-```
-┌──────────────┐
+![Single Responsibility: one reason to change](../figures/srp.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────────────┐
 │   Employee   │───────────────────────────────┐
 ├──────────────┤                               │
 │ - name       │                               │
@@ -70,8 +73,8 @@ public:
                         │ EmailService     │   │
                         ├──────────────────┤   │
                         │ + send()         │◄──┘
-                        └──────────────────┘
-```
+                        └──────────────────┘</code></pre>
+</details>
 
 ```cpp
 // Single Responsibility: Employee data and business logic
@@ -158,8 +161,11 @@ public:
 
 ### ✅ Good Example - Extension Without Modification
 
-```
-┌─────────────────────────┐
+![Open/Closed: extend without modifying](../figures/ocp.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌─────────────────────────┐
 │   PaymentProcessor      │ ← Abstract (Interface)
 ├─────────────────────────┤
 │ + process(amount): void │
@@ -170,8 +176,8 @@ public:
 ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐
 │ Credit   │ │  PayPal  │ │ Bitcoin  │ │   New    │
 │   Card   │ │          │ │          │ │ Payment  │← Add without modifying existing
-└──────────┘ └──────────┘ └──────────┘ └──────────┘
-```
+└──────────┘ └──────────┘ └──────────┘ └──────────┘</code></pre>
+</details>
 
 ```cpp
 // Abstract base class (interface)
@@ -283,8 +289,11 @@ void makeBirdFly(Bird* bird) {
 
 ### ✅ Good Example - Follows LSP
 
-```
-┌──────────┐
+![Liskov Substitution: subtypes stay swappable](../figures/lsp.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────────┐
 │   Bird   │
 ├──────────┤
 │ + eat()  │
@@ -302,8 +311,8 @@ void makeBirdFly(Bird* bird) {
      ▼             ▼
 ┌─────────┐   ┌─────────┐
 │ Sparrow │   │ Ostrich │
-└─────────┘   └─────────┘
-```
+└─────────┘   └─────────┘</code></pre>
+</details>
 
 ```cpp
 // Base class - only common behavior
@@ -394,8 +403,11 @@ public:
 
 ### ✅ Good Example - Segregated Interfaces
 
-```
-┌────────────┐    ┌────────────┐    ┌────────────┐
+![Interface Segregation: small focused interfaces](../figures/isp.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌────────────┐    ┌────────────┐    ┌────────────┐
 │ IWorkable  │    │  IEatable  │    │ ISleepable │
 ├────────────┤    ├────────────┤    ├────────────┤
 │ + work()   │    │ + eat()    │    │ + sleep()  │
@@ -416,8 +428,8 @@ public:
       ▼
 ┌─────────────┐
 │ RobotWorker │ (implements only what it needs)
-└─────────────┘
-```
+└─────────────┘</code></pre>
+</details>
 
 ```cpp
 // Small, focused interfaces
@@ -536,8 +548,11 @@ public:
 
 ### ✅ Good Example - Depend on Abstractions
 
-```
-        ┌──────────────────┐
+![Dependency Inversion: depend on abstractions](../figures/dip.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>        ┌──────────────────┐
         │   UserService    │ ← High-level
         └────────┬─────────┘
                  │ depends on
@@ -551,8 +566,8 @@ public:
 ┌──────────────┐  ┌──────────────┐  ┌──────────────┐
 │MySQLDatabase │  │PostgresqlDB  │  │  MongoDb     │
 └──────────────┘  └──────────────┘  └──────────────┘
-     ▲ Low-level modules
-```
+     ▲ Low-level modules</code></pre>
+</details>
 
 ```cpp
 // Abstraction (interface)
@@ -664,8 +679,11 @@ int main() {
 
 ## SOLID Summary
 
-```
-┌──────────────────────────────────────────────────────────────┐
+![The five SOLID principles](../figures/solid-overview.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────────────────────────────────────────────────────────────┐
 │ Principle │ Key Question                                     │
 ├───────────┼──────────────────────────────────────────────────┤
 │ SRP       │ Does this class have only one reason to change?  │
@@ -673,8 +691,8 @@ int main() {
 │ LSP       │ Can I substitute parent with child safely?       │
 │ ISP       │ Are interfaces small and focused?                │
 │ DIP       │ Do I depend on abstractions, not concretions?    │
-└──────────────────────────────────────────────────────────────┘
-```
+└──────────────────────────────────────────────────────────────┘</code></pre>
+</details>
 
 ### Real-world Analogy
 

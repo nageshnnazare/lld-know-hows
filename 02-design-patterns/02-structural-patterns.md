@@ -25,9 +25,12 @@ Structural patterns deal with object composition, creating relationships between
 
 ### Structure
 
-```
-┌─────────────┐         ┌─────────────┐
-│   Client    │────────>│   Target    │
+![Adapter pattern](../figures/adapter.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌─────────────┐         ┌─────────────┐
+│   Client    │────────&gt;│   Target    │
 └─────────────┘         │ (interface) │
                         ├─────────────┤
                         │ + request() │
@@ -47,8 +50,8 @@ Structural patterns deal with object composition, creating relationships between
                                     │   Adaptee   │
                                     ├─────────────┤
                                     │+specificReq()│
-                                    └─────────────┘
-```
+                                    └─────────────┘</code></pre>
+</details>
 
 ### C++ Implementation
 
@@ -160,8 +163,11 @@ player.play("vlc", "movie.vlc");
 
 ### Structure
 
-```
-┌─────────────┐
+![Decorator pattern](../figures/decorator.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌─────────────┐
 │  Component  │ (interface)
 ├─────────────┤
 │ + operation()│
@@ -175,8 +181,8 @@ player.play("vlc", "movie.vlc");
 └────────┘├───────────┤    ├─────────────┤
           │-component │◄───│  -component │
           │+operation()│    │ +operation()│
-          └───────────┘    └─────────────┘
-```
+          └───────────┘    └─────────────┘</code></pre>
+</details>
 
 ### C++ Implementation
 
@@ -293,8 +299,11 @@ cout << coffee->getDescription() << " $" << coffee->getCost() << endl;
 
 ### Structure
 
-```
-┌─────────────┐
+![Facade pattern](../figures/facade.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌─────────────┐
 │   Client    │
 └──────┬──────┘
        │
@@ -309,8 +318,8 @@ cout << coffee->getDescription() << " $" << coffee->getCost() << endl;
     │      Subsystem Classes        │
     ├──────────┬──────────┬─────────┤
     │ ClassA   │ ClassB   │ ClassC  │
-    └──────────┴──────────┴─────────┘
-```
+    └──────────┴──────────┴─────────┘</code></pre>
+</details>
 
 ### C++ Implementation
 
@@ -401,8 +410,11 @@ computer.start();  // Simple interface hides complexity
 
 ### Structure
 
-```
-┌─────────────┐
+![Composite pattern](../figures/composite.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌─────────────┐
 │  Component  │ (interface)
 ├─────────────┤
 │ + operation()│
@@ -417,8 +429,8 @@ computer.start();  // Simple interface hides complexity
 └───────┘    │ + add()   │
              │ + remove()│
              │+operation()│
-             └───────────┘
-```
+             └───────────┘</code></pre>
+</details>
 
 ### C++ Implementation
 
@@ -532,9 +544,12 @@ cout << "Total size: " << root->getSize() << " bytes" << endl;
 
 ### Structure
 
-```
-┌─────────────┐        ┌─────────────┐
-│   Client    │───────>│   Subject   │
+![Proxy pattern](../figures/proxy.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌─────────────┐        ┌─────────────┐
+│   Client    │───────&gt;│   Subject   │
 └─────────────┘        │ (interface) │
                        ├─────────────┤
                        │ + request() │
@@ -545,10 +560,10 @@ cout << "Total size: " << root->getSize() << " bytes" << endl;
                ┌──────▼─────┐  ┌──────▼─────┐
                │    Proxy   │  │ RealSubject│
                ├────────────┤  ├────────────┤
-               │-realSubject│─>│ + request()│
+               │-realSubject│─&gt;│ + request()│
                │ + request()│  └────────────┘
-               └────────────┘
-```
+               └────────────┘</code></pre>
+</details>
 
 ### C++ Implementation (Virtual Proxy)
 
@@ -680,9 +695,12 @@ public:
 
 ### Structure
 
-```
-┌──────────────┐          ┌──────────────┐
-│ Abstraction  │─────────>│Implementor   │
+![Bridge pattern](../figures/bridge.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────────────┐          ┌──────────────┐
+│ Abstraction  │─────────&gt;│Implementor   │
 ├──────────────┤          │ (interface)  │
 │-implementor  │          ├──────────────┤
 │ + operation()│          │+operationImpl│
@@ -693,8 +711,8 @@ public:
 ┌──────▼────────┐  ┌────────▼───┐ ┌───▼────────┐
 │RefinedAbstraction│ConcreteImpl│ │ConcreteImpl│
 └───────────────┘  │     A      │ │     B      │
-                   └────────────┘ └────────────┘
-```
+                   └────────────┘ └────────────┘</code></pre>
+</details>
 
 ### C++ Implementation
 
@@ -788,8 +806,11 @@ circle1->draw();
 
 ### Structure
 
-```
-┌─────────────┐
+![Flyweight pattern](../figures/flyweight.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌─────────────┐
 │   Client    │
 └──────┬──────┘
        │
@@ -806,8 +827,8 @@ circle1->draw();
 │  Flyweight   │
 ├──────────────┤
 │+ operation() │
-└──────────────┘
-```
+└──────────────┘</code></pre>
+</details>
 
 ### C++ Implementation
 

@@ -25,8 +25,11 @@
 
 ### Simple Class Structure
 
-```
-┌─────────────────────────┐
+![Anatomy of a UML class box](../figures/uml-class.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌─────────────────────────┐
 │      ClassName          │  ← Class name (mandatory)
 ├─────────────────────────┤
 │ - privateField: type    │  ← Attributes/Fields
@@ -36,8 +39,8 @@
 │ - privateMethod()       │  ← Methods/Operations
 │ # protectedMethod()     │
 │ + publicMethod()        │
-└─────────────────────────┘
-```
+└─────────────────────────┘</code></pre>
+</details>
 
 ### Visibility Symbols
 
@@ -70,16 +73,21 @@
 
 ## Relationships
 
+![The six UML class relationships](../figures/relationships.svg)
+
 ### 1. Association (Uses-A)
 
 **Notation**: Solid line with arrow `────>`
 
-```
-┌──────────┐           ┌──────────┐
-│ Teacher  │ ────────> │ Student  │
+![Association](../figures/rel-association.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────────┐           ┌──────────┐
+│ Teacher  │ ────────&gt; │ Student  │
 │          │  teaches  │          │
-└──────────┘           └──────────┘
-```
+└──────────┘           └──────────┘</code></pre>
+</details>
 
 **Multiplicity**:
 ```
@@ -117,12 +125,15 @@ public:
 
 **Notation**: Hollow diamond `◇────>`
 
-```
-┌────────────┐           ┌──────────┐
-│ Department │ ◇────────>│ Employee │
+![Aggregation](../figures/rel-aggregation.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌────────────┐           ┌──────────┐
+│ Department │ ◇────────&gt;│ Employee │
 │            │  has      │          │
-└────────────┘           └──────────┘
-```
+└────────────┘           └──────────┘</code></pre>
+</details>
 
 **Characteristics**:
 - Part can exist independently of whole
@@ -154,12 +165,15 @@ public:
 
 **Notation**: Filled diamond `◆────>`
 
-```
-┌──────┐           ┌──────┐
-│ Car  │ ◆────────>│Engine│
+![Composition](../figures/rel-composition.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────┐           ┌──────┐
+│ Car  │ ◆────────&gt;│Engine│
 │      │  owns     │      │
-└──────┘           └──────┘
-```
+└──────┘           └──────┘</code></pre>
+</details>
 
 **Characteristics**:
 - Part cannot exist without whole
@@ -189,8 +203,11 @@ public:
 
 **Notation**: Hollow triangle `───▷`
 
-```
-┌──────────────┐
+![Inheritance](../figures/inheritance.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────────────┐
 │    Animal    │
 ├──────────────┤
 │ + eat()      │
@@ -204,8 +221,8 @@ public:
 │ Dog  │   │ Cat  │   │ Bird │
 ├──────┤   ├──────┤   ├──────┤
 │+bark()│   │+meow()│   │+fly()│
-└──────┘   └──────┘   └──────┘
-```
+└──────┘   └──────┘   └──────┘</code></pre>
+</details>
 
 **C++ Implementation**:
 ```cpp
@@ -232,9 +249,12 @@ public:
 
 **Notation**: Dashed line with hollow triangle `┄┄▷`
 
-```
-┌──────────────┐
-│  <<interface>>│
+![Realization](../figures/rel-realization.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────────────┐
+│  &lt;&lt;interface&gt;&gt;│
 │   IShape     │
 ├──────────────┤
 │ + draw()     │
@@ -246,8 +266,8 @@ public:
    ▼            ▼          ▼
 ┌──────┐   ┌──────┐   ┌──────┐
 │Circle│   │Square│   │Triangle│
-└──────┘   └──────┘   └──────┘
-```
+└──────┘   └──────┘   └──────┘</code></pre>
+</details>
 
 **C++ Implementation**:
 ```cpp
@@ -271,12 +291,15 @@ public:
 
 **Notation**: Dashed arrow `┄┄┄>`
 
-```
-┌──────────┐           ┌──────────┐
-│  Client  │ ┄┄┄┄┄┄┄> │  Server  │
+![Dependency](../figures/rel-dependency.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────────┐           ┌──────────┐
+│  Client  │ ┄┄┄┄┄┄┄&gt; │  Server  │
 │          │   uses    │          │
-└──────────┘           └──────────┘
-```
+└──────────┘           └──────────┘</code></pre>
+</details>
 
 **When to use**:
 - Method parameter
@@ -305,17 +328,20 @@ public:
 
 ### Abstract Classes
 
-```
-┌─────────────────────────┐
-│  <<abstract>>           │
+![Abstract classes](../figures/abstract-vs-concrete.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌─────────────────────────┐
+│  &lt;&lt;abstract&gt;&gt;           │
 │      Animal             │
 ├─────────────────────────┤
 │ # name: string          │
 ├─────────────────────────┤
 │ + eat(): void = 0       │  ← Pure virtual (italic)
 │ + getName(): string     │
-└─────────────────────────┘
-```
+└─────────────────────────┘</code></pre>
+</details>
 
 **Alternative notation** (italics for abstract):
 ```
@@ -547,9 +573,12 @@ Common stereotypes:
 
 ### Singleton Pattern
 
-```
-┌───────────────────────┐
-│   <<singleton>>       │
+![Singleton pattern structure](../figures/singleton.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌───────────────────────┐
+│   &lt;&lt;singleton&gt;&gt;       │
 │      Database         │
 ├───────────────────────┤
 │ - instance: Database* │  (static, underlined)
@@ -557,14 +586,17 @@ Common stereotypes:
 ├───────────────────────┤
 │ + getInstance()       │  (static, underlined)
 │ + query()             │
-└───────────────────────┘
-```
+└───────────────────────┘</code></pre>
+</details>
 
 ### Factory Pattern
 
-```
-┌────────────────┐
-│  <<interface>> │
+![Factory pattern structure](../figures/factory-method.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌────────────────┐
+│  &lt;&lt;interface&gt;&gt; │
 │    Product     │
 └────────▲───────┘
          │
@@ -581,14 +613,17 @@ Common stereotypes:
 │     Factory     │
 ├─────────────────┤
 │+createProduct() │
-└─────────────────┘
-```
+└─────────────────┘</code></pre>
+</details>
 
 ### Observer Pattern
 
-```
-┌──────────────┐      1      *  ┌──────────────┐
-│   Subject    │◇──────────────>│   Observer   │
+![Observer pattern structure](../figures/observer.svg)
+
+<details class="ascii-diagram">
+<summary>ASCII diagram</summary>
+<pre><code>┌──────────────┐      1      *  ┌──────────────┐
+│   Subject    │◇──────────────&gt;│   Observer   │
 ├──────────────┤                ├──────────────┤
 │- observers   │                │ + update()   │
 │+ attach()    │                └──────▲───────┘
@@ -597,8 +632,8 @@ Common stereotypes:
 └──────────────┘                │             │
                          ┌──────▼─────┐ ┌─────▼──────┐
                          │ConcreteObsA│ │ConcreteObsB│
-                         └────────────┘ └────────────┘
-```
+                         └────────────┘ └────────────┘</code></pre>
+</details>
 
 ---
 
